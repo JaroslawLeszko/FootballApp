@@ -1,0 +1,42 @@
+{
+  "players": [
+    {
+      "id": "1",
+      "firstName": "Robert",
+      "lastName": "Lewandowski",
+      "teamID": "a"
+    },
+    {
+      "id": "2",
+      "firstName": "Wojciech",
+      "lastName": "Szczęsny",
+      "teamID": "b"
+    }
+  ],
+  "teams": [
+    {
+      "id": "a",
+      "name": "FC Barcelona",
+      "yearOfFoundation": 1954,
+      "localization": "Barcelona"
+    },
+    {
+      "id": "b",
+      "name": "Juventus Turym",
+      "yearOfFoundation": 1921,
+      "localization": "Turym"
+    }
+  ],
+  "games": [
+    {
+      "id": "a",
+      "date": "05.03.1987",
+      "gameName": "Sparring Match",
+      "place": "Barcelona",
+      "timeOfPlay": 92,
+      "result": "1:0",
+      "teamA": "a",
+      "teamB": "b"
+    }
+  ]
+}
