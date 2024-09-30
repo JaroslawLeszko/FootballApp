@@ -7,7 +7,7 @@ import { Statistics } from "./Statistics";
 import { ViewType } from "./types";
 
 export const Football = () => {
-  const [view, setView] = useState<ViewType>("teams");
+  const [view, setView] = useState<ViewType>("players");
 
   const handleBookmark = (value: string) => {
     setView(value as ViewType);
