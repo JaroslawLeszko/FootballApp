@@ -4,7 +4,6 @@ import { SinglePlayer } from "./SinglePlayer";
 
 export const Players = () => {
   const { data, isFetching } = useGetPlayersQuery();
-  console.log(data);
 
   if (isFetching) return <p>Loading...</p>;
 

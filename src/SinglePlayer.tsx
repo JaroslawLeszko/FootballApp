@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { PlayerEntity } from "./types";
 import { EditPlayer } from "./EditPlayer";
+import { DeletePlayer } from "./DeletePlayer";
 
 type SinglePlayerProps = {
   player: PlayerEntity;
@@ -13,6 +14,10 @@ export const SinglePlayer = ({ player }: SinglePlayerProps) => {
     setMode((prevMode) => (prevMode === "edit" ? "none" : "edit"));
   };
 
+  const toggleDeleteMode = () => {
+    setMode((prevMode) => (prevMode === "delete" ? "none" : "delete"));
+  };
+
   return (
     <li>
       <p>
@@ -22,6 +27,12 @@ export const SinglePlayer = ({ player }: SinglePlayerProps) => {
         {mode === "edit" ? "Cancel" : "Edit"}
       </button>
       {mode === "edit" ? <EditPlayer player={player} /> : undefined}
+      <button onClick={toggleDeleteMode}>
+        {mode === "delete" ? "Cancel" : "Delete"}
+      </button>
+      {mode === "delete" ? (
+        <DeletePlayer player={player} onCancel={toggleDeleteMode} />
+      ) : undefined}
     </li>
   );
 };
