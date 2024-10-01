@@ -19,8 +19,8 @@ export const Players = () => {
       <br />
       <p>
         <strong>Add player</strong>
-        <AddPlayer />
       </p>
+      <AddPlayer />
     </>
   );
 };
