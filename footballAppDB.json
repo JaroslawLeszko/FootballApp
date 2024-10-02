@@ -1,36 +1,4 @@
 {
-  "players": [
-    {
-      "firstName": "Robert",
-      "lastName": "Lewandowski",
-      "teamID": "a",
-      "id": "1"
-    },
-    {
-      "id": "2",
-      "firstName": "Wojciech",
-      "lastName": "Szczęsny",
-      "teamID": "b"
-    },
-    {
-      "id": "084a",
-      "firstName": "Jarek",
-      "lastName": "Leszko",
-      "teamID": "c"
-    },
-    {
-      "id": "059c",
-      "firstName": "Emanuel",
-      "lastName": "Olisadebe",
-      "teamID": "a"
-    },
-    {
-      "id": "b5a8",
-      "firstName": "dddddd",
-      "lastName": "fffff",
-      "teamID": ""
-    }
-  ],
   "teams": [
     {
       "id": "a",
@@ -43,8 +11,47 @@
       "name": "Juventus Turym",
       "yearOfFoundation": 1921,
       "localization": "Turym"
+    },
+    {
+      "id": "8617",
+      "name": "Legia ",
+      "localization": "Warszawa",
+      "yearOfFoundation": 1918
     }
   ],
+  "players": [
+    {
+      "id": "1",
+      "firstName": "Robert",
+      "lastName": "Lewandowski",
+      "teamId": "a"
+    },
+    {
+      "id": "2",
+      "firstName": "Wojciech",
+      "lastName": "Szczęsny",
+      "teamId": "b"
+    },
+    {
+      "id": "084a",
+      "firstName": "Jarek",
+      "lastName": "Leszko",
+      "teamId": "c"
+    },
+    {
+      "id": "059c",
+      "firstName": "Emanuel",
+      "lastName": "Olisadebe",
+      "teamId": "a"
+    },
+    {
+      "id": "b5a8",
+      "firstName": "dddddd",
+      "lastName": "fffff",
+      "teamId": ""
+    }
+  ],
+
   "games": [
     {
       "id": "a",

@@ -10,6 +10,7 @@ export const Players = () => {
   if (!data) return <p>No data...</p>;
   return (
     <>
+      <h2>Players</h2>
       <ul>
         {data.map((player) => (
           <SinglePlayer player={player} key={player.id} />

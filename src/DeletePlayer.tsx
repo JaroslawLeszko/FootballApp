@@ -13,7 +13,7 @@ export const DeletePlayer = ({ player, onCancel }: DeletePlayerProps) => {
     mutate();
   };
 
-  if (player.teamID) {
+  if (player.teamId) {
     return <p>Player is in a team. Remove it from team before deleting.</p>;
   }
 

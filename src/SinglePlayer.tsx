@@ -21,7 +21,7 @@ export const SinglePlayer = ({ player }: SinglePlayerProps) => {
   return (
     <li>
       <p>
-        {player.firstName} {player.lastName} {player.teamID}
+        {player.firstName} {player.lastName} {player.teamId}
       </p>
       <button onClick={toggleEditMode}>
         {mode === "edit" ? "Cancel" : "Edit"}

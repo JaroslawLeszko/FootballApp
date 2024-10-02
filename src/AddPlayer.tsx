@@ -7,7 +7,7 @@ export const AddPlayer = () => {
   const [values, setValues] = useState({
     firstName: "",
     lastName: "",
-    teamID: "",
+    teamId: "",
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +21,7 @@ export const AddPlayer = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     mutate(values);
-    setValues({ firstName: "", lastName: "", teamID: "" });
+    setValues({ firstName: "", lastName: "", teamId: "" });
   };
   if (isPending) return <p>Loading...</p>;
 
