@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PlayerEntity } from "./types";
+import { PlayerEntity } from "../types";
 import { EditPlayer } from "./EditPlayer";
 import { DeletePlayer } from "./DeletePlayer";
 

@@ -1,54 +1,54 @@
 import { ChangeEvent, FormEvent } from "react";
-import { TeamDto } from "./types";
+import { PlayerDto } from "../types/index";
 
-type TeamFormProps = {
+type PlayerFormProps = {
   handleSubmit: (e: FormEvent) => void;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  values: TeamDto;
+  values: PlayerDto;
   isPending: boolean;
 };
 
-export const TeamForm = ({
+export const PlayerForm = ({
   handleSubmit,
   handleChange,
   values,
   isPending,
-}: TeamFormProps) => {
+}: PlayerFormProps) => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <div>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="firstName">First name</label>
         </div>
         <input
           type="text"
-          id="name"
-          name="name"
-          value={values.name}
+          id="firstName"
+          name="firstName"
+          value={values.firstName}
           onChange={handleChange}
         />
       </div>
       <div>
         <div>
-          <label htmlFor="localization">Localization</label>
+          <label htmlFor="lastName">Last Name</label>
         </div>
         <input
           type="text"
-          id="localization"
-          name="localization"
-          value={values.localization}
+          id="lastName"
+          name="lastName"
+          value={values.lastName}
           onChange={handleChange}
         />
       </div>
       <div>
         <div>
-          <label htmlFor="yearOfFoundation">Year of foundation</label>
+          <label htmlFor="team">Team</label>
         </div>
         <input
-          type="number"
-          id="yearOfFoundation"
-          name="yearOfFoundation"
-          value={values.yearOfFoundation}
+          type="text"
+          id="teamId"
+          name="teamId"
+          value={values.teamId}
           onChange={handleChange}
         />
       </div>

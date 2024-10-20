@@ -1,32 +1,32 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { useAddPlayerMutation } from "./queries/useAddPlayerMutation";
-import { PlayerForm } from "./PlayerForm";
+import { useAddTeamMutation } from "../queries/useAddTeamMutation";
+import { TeamForm } from "./TeamForm";
 
-export const AddPlayer = () => {
-  const { mutate, isPending } = useAddPlayerMutation();
+export const AddTeam = () => {
+  const { mutate, isPending } = useAddTeamMutation();
   const [values, setValues] = useState({
-    firstName: "",
-    lastName: "",
-    teamId: "",
+    name: "",
+    localization: "",
+    yearOfFoundation: 0,
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setValues((prevValues) => ({
       ...prevValues,
-      [name]: value,
+      [name]: name === "yearOfFoundation" ? Number(value) : value,
     }));
   };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     mutate(values);
-    setValues({ firstName: "", lastName: "", teamId: "" });
+    setValues({ name: "", localization: "", yearOfFoundation: 0 });
   };
   if (isPending) return <p>Loading...</p>;
 
   return (
-    <PlayerForm
+    <TeamForm
       handleSubmit={handleSubmit}
       handleChange={handleChange}
       values={values}

@@ -1,18 +1,13 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import { useAddPlayerMutation } from "../queries/useAddPlayerMutation";
 import { PlayerForm } from "./PlayerForm";
-import { PlayerEntity } from "./types";
-import { useEditPlayerMutation } from "./queries/useEditPlayerMutation";
 
-type EditPlayerProps = {
-  player: PlayerEntity;
-};
-
-export const EditPlayer = ({ player }: EditPlayerProps) => {
-  const { mutate, isPending } = useEditPlayerMutation(player.id);
+export const AddPlayer = () => {
+  const { mutate, isPending } = useAddPlayerMutation();
   const [values, setValues] = useState({
-    firstName: player.firstName,
-    lastName: player.lastName,
-    teamId: player.teamId,
+    firstName: "",
+    lastName: "",
+    teamId: "",
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -26,8 +21,10 @@ export const EditPlayer = ({ player }: EditPlayerProps) => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     mutate(values);
+    setValues({ firstName: "", lastName: "", teamId: "" });
   };
   if (isPending) return <p>Loading...</p>;
+
   return (
     <PlayerForm
       handleSubmit={handleSubmit}

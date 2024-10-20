@@ -1,5 +1,5 @@
-import { useDeletePlayerMutation } from "./queries/useDeletePlayerMutation";
-import { PlayerEntity } from "./types";
+import { useDeletePlayerMutation } from "../queries/useDeletePlayerMutation";
+import { PlayerEntity } from "../types/index";
 
 type DeletePlayerProps = {
   player: PlayerEntity;

@@ -1,6 +1,6 @@
-import { AddTeam } from "./AddTeam";
-import { useGetTeamQuery } from "./queries/useGetTeamQuery";
-import { SingleTeam } from "./SingleTeam";
+import { AddTeam } from "../Teams/AddTeam";
+import { useGetTeamQuery } from "../queries/useGetTeamQuery";
+import { SingleTeam } from "../Teams/SingleTeam";
 
 export const Teams = () => {
   const { data, isFetching } = useGetTeamQuery();

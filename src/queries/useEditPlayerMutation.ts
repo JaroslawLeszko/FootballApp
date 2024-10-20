@@ -5,10 +5,13 @@ import { PlayerDto, PlayerEntity } from "../types";
 export const useEditPlayerMutation = (playerId: string) => {
   const { apiPut } = useApi();
   const queryQlient = useQueryClient();
-  const { mutate, isPending } = useMutation({
+  const { mutate, isPending, isSuccess } = useMutation({
     mutationKey: ["players", "update", playerId],
     mutationFn: async (payload: PlayerDto) => {
-      return apiPut<PlayerEntity, PlayerDto>(`players/${playerId}`, payload);
+      return await apiPut<PlayerEntity, PlayerDto>(
+        `players/${playerId}`,
+        payload,
+      );
     },
     onSuccess: () => {
       queryQlient.invalidateQueries({
@@ -17,5 +20,5 @@ export const useEditPlayerMutation = (playerId: string) => {
     },
   });
 
-  return { mutate, isPending };
+  return { mutate, isPending, isSuccess };
 };

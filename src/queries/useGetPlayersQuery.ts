@@ -4,11 +4,11 @@ import { PlayerEntity } from "../types";
 
 export const useGetPlayersQuery = () => {
   const { apiGet } = useApi();
-  const { data, isFetching, error } = useQuery({
+  const { data, isFetching, error, refetch } = useQuery({
     queryKey: ["players"],
     queryFn: async () => {
-      return apiGet<PlayerEntity[]>("players");
+      return await apiGet<PlayerEntity[]>("players");
     },
   });
-  return { data, isFetching, error };
+  return { data, isFetching, error, refetch };
 };

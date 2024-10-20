@@ -1,5 +1,5 @@
 import { AddPlayer } from "./AddPlayer";
-import { useGetPlayersQuery } from "./queries/useGetPlayersQuery";
+import { useGetPlayersQuery } from "../queries/useGetPlayersQuery";
 import { SinglePlayer } from "./SinglePlayer";
 
 export const Players = () => {
