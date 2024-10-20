@@ -1,21 +1,18 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useApi } from "../hooks/useApi";
-import { PlayerDto, PlayerEntity } from "../types";
+import { TeamDto, TeamEntity } from "../types";
 
-export const useEditPlayerMutation = (playerId: string) => {
+export const useEditTeamMutation = (teamId: string) => {
   const { apiPut } = useApi();
   const queryClient = useQueryClient();
   const { mutate, isPending, isSuccess } = useMutation({
-    mutationKey: ["players", "update", playerId],
-    mutationFn: async (payload: PlayerDto) => {
-      return await apiPut<PlayerEntity, PlayerDto>(
-        `players/${playerId}`,
-        payload,
-      );
+    mutationKey: ["teams", "update", teamId],
+    mutationFn: async (payload: TeamDto) => {
+      return await apiPut<TeamEntity, TeamDto>(`teams/${teamId}`, payload);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({
-        queryKey: ["players"],
+        queryKey: ["teams"],
       });
     },
   });
