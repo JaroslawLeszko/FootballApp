@@ -21,3 +21,15 @@ export type TeamDto = Omit<TeamEntity, "id">;
 export type TeamPlayers = TeamEntity & {
   players: PlayerEntity[];
 };
+
+export type MatchEntity = {
+  id: string;
+  matchName: string;
+  place: string;
+  timeOfPlay: number;
+  result: string;
+  teamA: string;
+  teamB: string;
+};
+
+export type MatchDto = Omit<MatchEntity, "id">;

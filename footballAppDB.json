@@ -63,11 +63,11 @@
       "id": "c148"
     }
   ],
-  "games": [
+  "matches": [
     {
       "id": "a",
       "date": "05.03.1987",
-      "gameName": "Sparring Match",
+      "matchName": "Sparring Match",
       "place": "Barcelona",
       "timeOfPlay": 92,
       "result": "1:0",
