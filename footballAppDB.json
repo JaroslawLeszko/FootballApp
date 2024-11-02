@@ -65,14 +65,34 @@
   ],
   "matches": [
     {
-      "id": "a",
-      "date": "05.03.1987",
-      "matchName": "Sparring Match",
-      "place": "Barcelona",
-      "timeOfPlay": 92,
-      "result": "1:0",
-      "teamA": "a",
-      "teamB": "b"
+      "id": "6e16",
+      "matchName": "",
+      "date": "j",
+      "place": "Wiedeń",
+      "timeOfPlay": 111,
+      "result": "4:1",
+      "teamA": "FC Barcelona",
+      "teamB": "Juventus Turym"
+    },
+    {
+      "matchName": "",
+      "date": "2024-05-16",
+      "place": "Warszawa",
+      "timeOfPlay": "50",
+      "result": "2:2",
+      "teamA": "Legia",
+      "teamB": "Legia",
+      "id": "81f8"
+    },
+    {
+      "id": "e45c",
+      "matchName": "",
+      "date": "2024-11-14",
+      "place": "Radom",
+      "timeOfPlay": 110,
+      "result": "2:8",
+      "teamA": "FC Barcelona",
+      "teamB": "Juventus Turym"
     }
   ]
 }

@@ -25,6 +25,7 @@ export type TeamPlayers = TeamEntity & {
 export type MatchEntity = {
   id: string;
   matchName: string;
+  date: string;
   place: string;
   timeOfPlay: number;
   result: string;

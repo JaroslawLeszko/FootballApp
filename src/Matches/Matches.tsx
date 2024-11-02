@@ -1,4 +1,5 @@
 import { useGetMatchesQuery } from "../queries/useGetMatchesQuery";
+import { AddMatch } from "./AddMatch";
 import { SingleMatch } from "./SingleMatch";
 
 export const Matches = () => {
@@ -14,6 +15,11 @@ export const Matches = () => {
           <SingleMatch match={match} key={match.id} />
         ))}
       </ul>
+      <br />
+      <p>
+        <strong>Add match</strong>
+      </p>
+      <AddMatch />
     </>
   );
 };
