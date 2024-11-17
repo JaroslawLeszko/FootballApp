@@ -16,7 +16,6 @@ export const MatchForm = ({
   isPending,
 }: MatchFormProps) => {
   const { data } = useGetTeamQuery();
-  console.log(data);
 
   return (
     <form onSubmit={handleSubmit}>
