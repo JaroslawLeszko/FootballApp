@@ -1,22 +1,32 @@
 {
   "teams": [
     {
-      "id": "a",
       "name": "FC Barcelona",
-      "yearOfFoundation": 1954,
-      "localization": "Barcelona"
+      "yearOfFoundation": 1911,
+      "localization": "Barcelona",
+      "goalsScored": 3,
+      "id": "a"
     },
     {
-      "id": "b",
       "name": "Juventus Turym",
       "yearOfFoundation": 1921,
-      "localization": "Turym"
+      "localization": "Turym",
+      "goalsScored": 4,
+      "id": "b"
     },
     {
       "name": "Legia",
       "yearOfFoundation": "1918",
       "localization": "Warszawa",
-      "id": "8617"
+      "id": "8617",
+      "goalsScored": 0
+    },
+    {
+      "id": "b4be",
+      "name": "Motor Lublin",
+      "localization": "Lublin",
+      "yearOfFoundation": 1958,
+      "goalsScored": 0
     }
   ],
   "players": [
@@ -65,34 +75,55 @@
   ],
   "matches": [
     {
-      "id": "6e16",
+      "id": "3719",
       "matchName": "",
-      "date": "j",
-      "place": "Wiedeń",
-      "timeOfPlay": 111,
-      "result": "4:1",
-      "teamA": "FC Barcelona",
-      "teamB": "Juventus Turym"
+      "date": "",
+      "place": "",
+      "timeOfPlay": 0,
+      "teamAResult": 1,
+      "teamBResult": 1,
+      "teamA": [
+        "FC Barcelona",
+        "a"
+      ],
+      "teamB": [
+        "Juventus Turym",
+        "b"
+      ]
     },
     {
+      "id": "403f",
       "matchName": "",
-      "date": "2024-05-16",
-      "place": "Warszawa",
-      "timeOfPlay": "50",
-      "result": "2:2",
-      "teamA": "Legia",
-      "teamB": "Legia",
-      "id": "81f8"
+      "date": "",
+      "place": "",
+      "timeOfPlay": 0,
+      "teamAResult": 1,
+      "teamBResult": 1,
+      "teamA": [
+        "FC Barcelona",
+        "a"
+      ],
+      "teamB": [
+        "Juventus Turym",
+        "b"
+      ]
     },
     {
-      "id": "e45c",
+      "id": "3925",
       "matchName": "",
-      "date": "2024-11-14",
-      "place": "Radom",
-      "timeOfPlay": 110,
-      "result": "2:8",
-      "teamA": "FC Barcelona",
-      "teamB": "Juventus Turym"
+      "date": "",
+      "place": "",
+      "timeOfPlay": 0,
+      "teamAResult": 2,
+      "teamBResult": 1,
+      "teamA": [
+        "Juventus Turym",
+        "b"
+      ],
+      "teamB": [
+        "FC Barcelona",
+        "a"
+      ]
     }
   ]
 }

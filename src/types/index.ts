@@ -14,6 +14,7 @@ export type TeamEntity = {
   name: string;
   yearOfFoundation: number;
   localization: string;
+  goalsScored: number;
 };
 
 export type TeamDto = Omit<TeamEntity, "id">;
@@ -28,9 +29,10 @@ export type MatchEntity = {
   date: string;
   place: string;
   timeOfPlay: number;
-  result: string;
-  teamA: string;
-  teamB: string;
+  teamAResult: number;
+  teamBResult: number;
+  teamA: string[];
+  teamB: string[];
 };
 
 export type MatchDto = Omit<MatchEntity, "id">;
