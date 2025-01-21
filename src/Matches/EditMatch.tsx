@@ -15,7 +15,8 @@ export const EditMatch = ({ match }: EditMatchProps) => {
     date: match.date,
     place: match.place,
     timeOfPlay: match.timeOfPlay,
-    result: match.result,
+    teamAResult: match.teamAResult,
+    teamBResult: match.teamBResult,
     teamA: match.teamA,
     teamB: match.teamB,
   });

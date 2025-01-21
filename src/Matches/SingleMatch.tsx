@@ -12,12 +12,15 @@ export const SingleMatch = ({ match }: SingleMatchProps) => {
   const toggleEditMode = () => {
     setMode((prevMode) => (prevMode === "edit" ? "none" : "edit"));
   };
+
   return (
     <li>
       <p>
-        {match.teamA} vs {match.teamB}
+        {match.teamA[0]} vs {match.teamB[0]}
       </p>
-      <p>{match.result}</p>
+      <p>
+        {match.teamAResult} : {match.teamBResult}
+      </p>
       <p>{match.place}</p>
       <p>{match.timeOfPlay}</p>
       <p>{match.date}</p>

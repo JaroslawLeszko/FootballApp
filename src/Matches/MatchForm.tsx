@@ -16,7 +16,6 @@ export const MatchForm = ({
   isPending,
 }: MatchFormProps) => {
   const { data } = useGetTeamQuery();
-  console.log(data);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -27,7 +26,7 @@ export const MatchForm = ({
         <select name="teamA" id="teamA" onChange={handleChange}>
           <option value="">Select team</option>
           {data?.map((team) => (
-            <option value={team.name} key={team.id}>
+            <option value={[team.name, team.id]} key={team.id}>
               {team.name}
             </option>
           ))}
@@ -40,7 +39,7 @@ export const MatchForm = ({
         <select name="teamB" id="teamB" onChange={handleChange}>
           <option value="">Select team</option>
           {data?.map((team) => (
-            <option value={team.name} key={team.id}>
+            <option value={[team.name, team.id]} key={team.id}>
               {team.name}
             </option>
           ))}
@@ -48,13 +47,25 @@ export const MatchForm = ({
       </div>
       <div>
         <div>
-          <label htmlFor="result">Result</label>
+          <label htmlFor="teamAResult">Team A Result</label>
         </div>
         <input
-          type="text"
-          id="result"
-          name="result"
-          value={values.result}
+          type="number"
+          id="teamAResult"
+          name="teamAResult"
+          value={values.teamAResult}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <div>
+          <label htmlFor="teamBResult">Team B Result</label>
+        </div>
+        <input
+          type="number"
+          id="teamBResult"
+          name="teamBResult"
+          value={values.teamBResult}
           onChange={handleChange}
         />
       </div>
