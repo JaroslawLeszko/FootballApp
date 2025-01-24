@@ -6,8 +6,9 @@ type LastMatchProps = {
 export const LastMatch = ({ lastMatch }: LastMatchProps) => {
   return (
     <div>
+      <h2>Last Match</h2>
       <p>
-        {lastMatch.teamA} vs {lastMatch.teamB}
+        {lastMatch.teamA[0]} vs {lastMatch.teamB[0]}
       </p>
       <p>
         {lastMatch.teamAResult} : {lastMatch.teamBResult}
