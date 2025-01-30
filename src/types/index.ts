@@ -17,7 +17,7 @@ export type TeamEntity = {
   goalsScored: number;
 };
 
-export type TeamDto = Omit<TeamEntity, "id">;
+export type TeamDto = Omit<TeamEntity, "id" | "goalsScored">;
 
 export type TeamPlayers = TeamEntity & {
   players: PlayerEntity[];

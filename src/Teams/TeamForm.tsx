@@ -1,5 +1,13 @@
 import { ChangeEvent, FormEvent } from "react";
 import { TeamDto } from "../types";
+import styled from "styled-components";
+
+const StyledButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) => props.theme.colors.primary};
+`;
 
 type TeamFormProps = {
   handleSubmit: (e: FormEvent) => void;
@@ -52,9 +60,9 @@ export const TeamForm = ({
           onChange={handleChange}
         />
       </div>
-      <button type="submit" disabled={isPending}>
+      <StyledButton type="submit" disabled={isPending}>
         Save
-      </button>
+      </StyledButton>
     </form>
   );
 };

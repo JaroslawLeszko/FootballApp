@@ -2,6 +2,18 @@ import { useState } from "react";
 import { PlayerEntity } from "../types";
 import { EditPlayer } from "./EditPlayer";
 import { DeletePlayer } from "./DeletePlayer";
+import styled from "styled-components";
+import { commonButton } from "../Helpers/commonButton";
+
+const DeleteButton = styled.button`
+  ${commonButton}
+  background-color: ${(props) => props.theme.colors.delete}
+`;
+
+const EditButton = styled.button`
+  ${commonButton}
+  background-color: ${(props) => props.theme.colors.secondary}
+`;
 
 type SinglePlayerProps = {
   player: PlayerEntity;
@@ -20,20 +32,24 @@ export const SinglePlayer = ({ player }: SinglePlayerProps) => {
 
   return (
     <li>
-      <p>
-        {player.firstName} {player.lastName}
-      </p>
-      <p>Team: {player.teamId}</p>
-      <button onClick={toggleEditMode}>
-        {mode === "edit" ? "Cancel" : "Edit"}
-      </button>
-      {mode === "edit" ? <EditPlayer player={player} /> : undefined}
-      <button onClick={toggleDeleteMode}>
-        {mode === "delete" ? "Cancel" : "Delete"}
-      </button>
-      {mode === "delete" ? (
-        <DeletePlayer player={player} onCancel={toggleDeleteMode} />
-      ) : undefined}
+      <div>
+        <p>
+          {player.firstName} {player.lastName}
+        </p>
+        <p>Team: {player.teamId}</p>
+      </div>
+      <div>
+        <EditButton onClick={toggleEditMode}>
+          {mode === "edit" ? "Cancel" : "Edit"}
+        </EditButton>
+        {mode === "edit" ? <EditPlayer player={player} /> : undefined}
+        <DeleteButton onClick={toggleDeleteMode}>
+          {mode === "delete" ? "Cancel" : "Delete"}
+        </DeleteButton>
+        {mode === "delete" ? (
+          <DeletePlayer player={player} onCancel={toggleDeleteMode} />
+        ) : undefined}
+      </div>
     </li>
   );
 };
