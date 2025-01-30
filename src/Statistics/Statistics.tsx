@@ -14,21 +14,11 @@ export const Statistics = () => {
       new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
-  const matchesPlayedInPeriodOfTime = (timePeriod: string) => {
-    const playedMatches = [...data].filter(
-      (match) =>
-        new Date(match.date).getTime() === new Date(timePeriod).getTime(),
-    );
-    return playedMatches.length;
-  };
-
-  console.log(matchesPlayedInPeriodOfTime("2024-11-17"));
-
   return (
     <>
       <h2>Statistics</h2>
       <LastMatch lastMatch={matchesSortedByDate[0]} />
-      <PlayedMatches />
+      <PlayedMatches matches={data} />
       <Top3GoalsScored />
     </>
   );

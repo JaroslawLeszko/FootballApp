@@ -4,29 +4,29 @@
       "name": "FC Barcelona",
       "yearOfFoundation": 1911,
       "localization": "Barcelona",
-      "goalsScored": 3,
+      "goalsScored": 11,
       "id": "a"
     },
     {
       "name": "Juventus Turym",
       "yearOfFoundation": 1921,
       "localization": "Turym",
-      "goalsScored": 4,
+      "goalsScored": 8,
       "id": "b"
     },
     {
       "name": "Legia",
       "yearOfFoundation": "1918",
       "localization": "Warszawa",
-      "id": "8617",
-      "goalsScored": 0
+      "goalsScored": 12,
+      "id": "8617"
     },
     {
-      "id": "b4be",
       "name": "Motor Lublin",
-      "localization": "Lublin",
       "yearOfFoundation": 1958,
-      "goalsScored": 0
+      "localization": "Lublin",
+      "goalsScored": 19,
+      "id": "b4be"
     }
   ],
   "players": [
@@ -75,54 +75,170 @@
   ],
   "matches": [
     {
-      "id": "3719",
+      "id": "8cca",
       "matchName": "",
-      "date": "",
+      "date": "2025-01-22",
       "place": "",
-      "timeOfPlay": 0,
-      "teamAResult": 1,
-      "teamBResult": 1,
-      "teamA": [
-        "FC Barcelona",
-        "a"
-      ],
-      "teamB": [
-        "Juventus Turym",
-        "b"
-      ]
-    },
-    {
-      "id": "403f",
-      "matchName": "",
-      "date": "",
-      "place": "",
-      "timeOfPlay": 0,
-      "teamAResult": 1,
-      "teamBResult": 1,
-      "teamA": [
-        "FC Barcelona",
-        "a"
-      ],
-      "teamB": [
-        "Juventus Turym",
-        "b"
-      ]
-    },
-    {
-      "id": "3925",
-      "matchName": "",
-      "date": "",
-      "place": "",
-      "timeOfPlay": 0,
+      "timeOfPlay": 90,
       "teamAResult": 2,
       "teamBResult": 1,
       "teamA": [
+        "FC Barcelona",
+        "a"
+      ],
+      "teamB": [
+        "Juventus Turym",
+        "b"
+      ]
+    },
+    {
+      "id": "79bf",
+      "matchName": "",
+      "date": "2025-01-23",
+      "place": "",
+      "timeOfPlay": 90,
+      "teamAResult": 3,
+      "teamBResult": 1,
+      "teamA": [
+        "Legia",
+        "8617"
+      ],
+      "teamB": [
+        "Motor Lublin",
+        "b4be"
+      ]
+    },
+    {
+      "id": "6a26",
+      "matchName": "",
+      "date": "2025-01-20",
+      "place": "",
+      "timeOfPlay": 0,
+      "teamAResult": 1,
+      "teamBResult": 4,
+      "teamA": [
+        "Motor Lublin",
+        "b4be"
+      ],
+      "teamB": []
+    },
+    {
+      "id": "4119",
+      "matchName": "",
+      "date": "2025-01-21",
+      "place": "",
+      "timeOfPlay": 0,
+      "teamAResult": 1,
+      "teamBResult": 0,
+      "teamA": [
         "Juventus Turym",
         "b"
       ],
       "teamB": [
+        "Legia",
+        "8617"
+      ]
+    },
+    {
+      "id": "ae47",
+      "matchName": "",
+      "date": "2025-01-23",
+      "place": "",
+      "timeOfPlay": 0,
+      "teamAResult": 0,
+      "teamBResult": 0,
+      "teamA": [
+        "Legia",
+        "8617"
+      ],
+      "teamB": [
+        "Motor Lublin",
+        "b4be"
+      ]
+    },
+    {
+      "id": "26e9",
+      "matchName": "",
+      "date": "2025-01-23",
+      "place": "",
+      "timeOfPlay": 0,
+      "teamAResult": 0,
+      "teamBResult": 0,
+      "teamA": [
+        "Juventus Turym",
+        "b"
+      ],
+      "teamB": [
+        "Legia",
+        "8617"
+      ]
+    },
+    {
+      "id": "6f38",
+      "matchName": "",
+      "date": "2025-01-24",
+      "place": "",
+      "timeOfPlay": 0,
+      "teamAResult": 0,
+      "teamBResult": 0,
+      "teamA": [
         "FC Barcelona",
         "a"
+      ],
+      "teamB": [
+        "Juventus Turym",
+        "b"
+      ]
+    },
+    {
+      "id": "32ee",
+      "matchName": "",
+      "date": "2025-01-22",
+      "place": "",
+      "timeOfPlay": 0,
+      "teamAResult": 0,
+      "teamBResult": 0,
+      "teamA": [
+        "Legia",
+        "8617"
+      ],
+      "teamB": [
+        "Motor Lublin",
+        "b4be"
+      ]
+    },
+    {
+      "id": "4a67",
+      "matchName": "",
+      "date": "2025-01-15",
+      "place": "",
+      "timeOfPlay": 0,
+      "teamAResult": 0,
+      "teamBResult": 0,
+      "teamA": [
+        "Legia",
+        "8617"
+      ],
+      "teamB": [
+        "Motor Lublin",
+        "b4be"
+      ]
+    },
+    {
+      "id": "c8aa",
+      "matchName": "",
+      "date": "2025-01-24",
+      "place": "",
+      "timeOfPlay": 0,
+      "teamAResult": 2,
+      "teamBResult": 2,
+      "teamA": [
+        "Motor Lublin",
+        "b4be"
+      ],
+      "teamB": [
+        "Juventus Turym",
+        "b"
       ]
     }
   ]
