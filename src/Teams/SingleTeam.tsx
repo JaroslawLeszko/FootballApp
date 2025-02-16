@@ -6,15 +6,10 @@ import { SingleTeamPlayer } from "./SingleTeamPlayer";
 import { EditTeam } from "./EditTeam";
 import { DeleteTeam } from "./DeleteTeam";
 import styled from "styled-components";
-import { commonButton } from "../Helpers/commonButton";
+import { commonLi, noButton, yesButton } from "../Helpers/commonElements";
 
 const TeamCard = styled.div`
-  background-color: #3e7cb1;
-  margin: 10px;
-  padding: 15px;
-  border-radius: 8px;
-  width: 300px;
-  box-shadow: 11px 11px 20px -12px rgba(66, 68, 90, 1);
+  ${commonLi}
 `;
 
 const TeamInfo = styled.div`
@@ -27,19 +22,13 @@ const Info = styled.p`
 `;
 
 const DeleteButton = styled.button`
-  ${commonButton}
+  ${yesButton}
   background-color: ${(props) => props.theme.colors.delete};
-  &:hover {
-    background: linear-gradient(90deg, #f19b00, #f14b00);
-  }
 `;
 
 const ShowEditButton = styled.button`
-  ${commonButton}
+  ${noButton}
   background-color: ${(props) => props.theme.colors.secondary};
-  &:hover {
-    background: linear-gradient(90deg, #a6bedb, #5c8abf);
-  }
 `;
 
 type SingleTeamProps = {

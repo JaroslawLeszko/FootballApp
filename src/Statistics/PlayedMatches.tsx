@@ -1,5 +1,22 @@
 import { useState } from "react";
 import { MatchEntity } from "../types";
+import styled from "styled-components";
+import { noButton } from "../Helpers/commonElements";
+
+const ButtonBar = styled.div`
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const PeriodButton = styled.button`
+  ${noButton}
+  margin: 2px;
+  margin-top: 5px;
+  width: 100%;
+  background-color: ${(props) => props.theme.colors.secondary};
+  box-sizing: border-box;
+`;
 
 type PlayedMatchesProp = {
   matches: MatchEntity[];
@@ -32,18 +49,26 @@ export const PlayedMatches = ({ matches }: PlayedMatchesProp) => {
     <>
       <h2>Played Matches</h2>
       <div>
+        <ButtonBar>
+          <PeriodButton onClick={() => setShowPeriod("day")}>
+            Last day
+          </PeriodButton>
+          <PeriodButton onClick={() => setShowPeriod("week")}>
+            Last week
+          </PeriodButton>
+          <PeriodButton onClick={() => setShowPeriod("month")}>
+            Last month
+          </PeriodButton>
+        </ButtonBar>
         <div>
-          <button onClick={() => setShowPeriod("day")}>Last day</button>
-          <button onClick={() => setShowPeriod("week")}>Last week</button>
-          <button onClick={() => setShowPeriod("month")}>Last month</button>
-        </div>
-        <div>
-          {showPeriod === "day" ? <p>{matchesPlayedToday()}</p> : undefined}
+          {showPeriod === "day" ? (
+            <h3>Matches playet today: {matchesPlayedToday()}</h3>
+          ) : undefined}
           {showPeriod === "week" ? (
-            <p>{matchesPlayedPeriodDays(7)}</p>
+            <h3>Matches playet last week: {matchesPlayedPeriodDays(7)}</h3>
           ) : undefined}
           {showPeriod === "month" ? (
-            <p>{matchesPlayedPeriodDays(30)}</p>
+            <h3>Matches playet last month: {matchesPlayedPeriodDays(30)}</h3>
           ) : undefined}
         </div>
       </div>

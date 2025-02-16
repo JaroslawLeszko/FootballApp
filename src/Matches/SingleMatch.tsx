@@ -2,16 +2,10 @@ import { useState } from "react";
 import { MatchEntity } from "../types";
 import { EditMatch } from "./EditMatch";
 import styled from "styled-components";
-import { commonButton } from "../Helpers/commonButton";
+import { commonLi, noButton } from "../Helpers/commonElements";
 
 const StyledListElement = styled.li`
-  list-style: none;
-  background-color: #3e7cb1;
-  margin: 10px;
-  padding: 15px;
-  border-radius: 8px;
-  width: 300px;
-  box-shadow: 11px 11px 20px -12px rgba(66, 68, 90, 1);
+  ${commonLi}
 `;
 
 const MatchInfo = styled.div`
@@ -32,11 +26,8 @@ const Details = styled.div`
 `;
 
 const EditButton = styled.button`
-  ${commonButton}
+  ${noButton}
   background-color: ${(props) => props.theme.colors.secondary};
-  &:hover {
-    background: linear-gradient(90deg, #a6bedb, #5c8abf);
-  }
 `;
 
 type SingleMatchProps = {
@@ -70,7 +61,7 @@ export const SingleMatch = ({ match }: SingleMatchProps) => {
             {match.place}
           </Info>
           <Info>
-            <Info>Time of play </Info>
+            <Info>Time of play: </Info>
             {match.timeOfPlay} minutes
           </Info>
         </Details>

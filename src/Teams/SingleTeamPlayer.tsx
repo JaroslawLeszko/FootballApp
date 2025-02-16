@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEditPlayerMutation } from "../queries/useEditPlayerMutation";
 import { PlayerEntity } from "../types";
 import styled from "styled-components";
-import { commonButton } from "../Helpers/commonButton";
+import { yesButton } from "../Helpers/commonElements";
 
 const StyledListElement = styled.li`
   list-style: dot;
@@ -18,13 +18,10 @@ const Player = styled.div`
 `;
 
 const RemoveButton = styled.button`
-  ${commonButton}
+  ${yesButton}
   margin: 4px;
   padding: 4px;
   background-color: ${(props) => props.theme.colors.delete};
-  &:hover {
-    background: linear-gradient(90deg, #f19b00, #f14b00);
-  }
 `;
 
 type SingleTeamPlayerProps = {

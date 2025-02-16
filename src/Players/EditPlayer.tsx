@@ -15,7 +15,9 @@ export const EditPlayer = ({ player }: EditPlayerProps) => {
     teamId: player.teamId,
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
     setValues((prevValues) => ({
       ...prevValues,

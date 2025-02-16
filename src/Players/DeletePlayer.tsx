@@ -1,22 +1,16 @@
 import styled from "styled-components";
 import { useDeletePlayerMutation } from "../queries/useDeletePlayerMutation";
 import { PlayerEntity } from "../types/index";
-import { commonButton } from "../Helpers/commonButton";
+import { noButton, yesButton } from "../Helpers/commonElements";
 
 const YesButton = styled.button`
-  ${commonButton}
+  ${yesButton}
   background-color: ${(props) => props.theme.colors.delete};
-  &:hover {
-    background: linear-gradient(90deg, #f19b00, #f14b00);
-  }
 `;
 
 const NoButton = styled.button`
-  ${commonButton}
+  ${noButton}
   background-color: ${(props) => props.theme.colors.secondary};
-  &:hover {
-    background: linear-gradient(90deg, #a6bedb, #5c8abf);
-  }
 `;
 
 type DeletePlayerProps = {

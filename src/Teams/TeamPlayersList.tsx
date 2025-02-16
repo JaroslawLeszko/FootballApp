@@ -3,12 +3,11 @@ import { useEditPlayerMutation } from "../queries/useEditPlayerMutation";
 import { useGetSinglePlayerQuery } from "../queries/useGetSinglePlayerQuery";
 import { useGetPlayersQuery } from "../queries/useGetPlayersQuery";
 import styled from "styled-components";
+import { commonSelect } from "../Helpers/commonElements";
 
 const Select = styled.select`
-  width: 100%;
-  border-radius: 5px;
+  ${commonSelect}
   background-color: ${(props) => props.theme.colors.secondary};
-  box-sizing: border-box;
 `;
 
 type TeamPlayersListProps = {

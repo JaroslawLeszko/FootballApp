@@ -2,44 +2,35 @@ import { ChangeEvent, FormEvent } from "react";
 import { MatchDto } from "../types";
 import { useGetTeamQuery } from "../queries/useGetTeamQuery";
 import styled from "styled-components";
-import { commonButton } from "../Helpers/commonButton";
+import {
+  commonForm,
+  commonInput,
+  commonInputWrapper,
+  commonSaveButton,
+  commonSelect,
+} from "../Helpers/commonElements";
 
 const InputWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  align-items: left;
+  ${commonInputWrapper}
 `;
 
 const Form = styled.form`
-  margin-top: 20px;
-  width: 100%;
+  ${commonForm}
 `;
 
 const Input = styled.input`
-  width: 100%;
-  border-radius: 5px;
+  ${commonInput}
   background-color: ${(props) => props.theme.colors.secondary};
-  box-sizing: border-box;
 `;
 
 const SaveButton = styled.button`
-  ${commonButton}
-  margin: 0;
-  margin-top: 5px;
-  width: 100%;
+  ${commonSaveButton}
   background-color: ${(props) => props.theme.colors.secondary};
-  &:hover {
-    background: linear-gradient(90deg, #a6bedb, #5c8abf);
-  }
-  box-sizing: border-box;
 `;
 
 const Select = styled.select`
-  width: 100%;
-  border-radius: 5px;
+  ${commonSelect}
   background-color: ${(props) => props.theme.colors.secondary};
-  box-sizing: border-box;
 `;
 
 type MatchFormProps = {
