@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ViewType } from "./types";
-import { commonButton } from "./Helpers/commonButton";
+import { commonButton } from "./Helpers/commonElements";
 
 const Navbar = styled.div`
   display: grid-row;

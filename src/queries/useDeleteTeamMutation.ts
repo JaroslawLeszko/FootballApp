@@ -4,14 +4,14 @@ import { TeamEntity } from "../types";
 
 export const useDeleteTeamMutation = (teamId: string) => {
   const { apiDelete } = useApi();
-  const queryQlient = useQueryClient();
+  const queryClient = useQueryClient();
   const { mutate, isPending } = useMutation({
     mutationKey: ["teams", teamId],
     mutationFn: async () => {
       return await apiDelete<TeamEntity>(`teams/${teamId}`);
     },
     onSuccess: () => {
-      queryQlient.invalidateQueries({
+      queryClient.invalidateQueries({
         queryKey: ["teams"],
       });
     },

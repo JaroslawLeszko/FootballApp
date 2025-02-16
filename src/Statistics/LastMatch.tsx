@@ -6,10 +6,13 @@ const MatchInfo = styled.div`
   ${commonLi}
 `;
 
-const Info = styled.p`
+const Info = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+const InfoLine = styled.p`
   margin: 2px;
   padding: 2px;
 `;
@@ -31,20 +34,20 @@ export const LastMatch = ({ lastMatch }: LastMatchProps) => {
           <strong>{lastMatch.teamB[0]}</strong>
         </Info>
         <Info>
-          <Info>{lastMatch.teamAResult}</Info> :
-          <Info>{lastMatch.teamBResult}</Info>
+          <InfoLine>{lastMatch.teamAResult}</InfoLine> :
+          <InfoLine>{lastMatch.teamBResult}</InfoLine>
         </Info>
         <Details>
           <Info>
-            <Info>Date: </Info>
+            <InfoLine>Date: </InfoLine>
             {lastMatch.date}
           </Info>
           <Info>
-            <Info>Place: </Info>
+            <InfoLine>Place: </InfoLine>
             {lastMatch.place}
           </Info>
           <Info>
-            <Info>Time of play: </Info>
+            <InfoLine>Time of play: </InfoLine>
             {lastMatch.timeOfPlay} minutes
           </Info>
         </Details>

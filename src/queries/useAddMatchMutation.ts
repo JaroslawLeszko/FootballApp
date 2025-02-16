@@ -4,14 +4,14 @@ import { MatchDto, MatchEntity } from "../types";
 
 export const useAddMatchMutation = () => {
   const { apiPost } = useApi();
-  const queryQlient = useQueryClient();
+  const queryClient = useQueryClient();
   const { mutate, isPending } = useMutation({
     mutationKey: ["matches", "create"],
     mutationFn: async (payload: MatchDto) => {
       return await apiPost<MatchEntity, MatchDto>("matches", payload);
     },
     onSuccess: () => {
-      queryQlient.invalidateQueries({
+      queryClient.invalidateQueries({
         queryKey: ["matches"],
       });
     },
