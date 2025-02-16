@@ -4,14 +4,14 @@ import { PlayerEntity } from "../types";
 
 export const useDeletePlayerMutation = (playerId: string) => {
   const { apiDelete } = useApi();
-  const queryQlient = useQueryClient();
+  const queryClient = useQueryClient();
   const { mutate, isPending } = useMutation({
     mutationKey: ["players", playerId],
     mutationFn: async () => {
       return await apiDelete<PlayerEntity>(`players/${playerId}`);
     },
     onSuccess: () => {
-      queryQlient.invalidateQueries({
+      queryClient.invalidateQueries({
         queryKey: ["players"],
       });
     },

@@ -4,14 +4,14 @@ import { PlayerDto, PlayerEntity } from "../types";
 
 export const useAddPlayerMutation = () => {
   const { apiPost } = useApi();
-  const queryQlient = useQueryClient();
+  const queryClient = useQueryClient();
   const { mutate, isPending } = useMutation({
     mutationKey: ["players", "create"],
     mutationFn: async (payload: PlayerDto) => {
       return await apiPost<PlayerEntity, PlayerDto>("players", payload);
     },
     onSuccess: () => {
-      queryQlient.invalidateQueries({
+      queryClient.invalidateQueries({
         queryKey: ["players"],
       });
     },
