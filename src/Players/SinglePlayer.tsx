@@ -4,15 +4,32 @@ import { EditPlayer } from "./EditPlayer";
 import { DeletePlayer } from "./DeletePlayer";
 import styled from "styled-components";
 import { commonButton } from "../Helpers/commonButton";
+import { useGetSingleTeam } from "../queries/useGetSingleTeam";
 
 const DeleteButton = styled.button`
   ${commonButton}
-  background-color: ${(props) => props.theme.colors.delete}
+  background-color: ${(props) => props.theme.colors.delete};
+  &:hover {
+    background: linear-gradient(90deg, #f19b00, #f14b00);
+  }
 `;
 
 const EditButton = styled.button`
   ${commonButton}
-  background-color: ${(props) => props.theme.colors.secondary}
+  background-color: ${(props) => props.theme.colors.secondary};
+  &:hover {
+    background: linear-gradient(90deg, #a6bedb, #5c8abf);
+  }
+`;
+
+const StyledListElement = styled.li`
+  list-style: none;
+  background-color: #3e7cb1;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 11px 11px 20px -12px rgba(66, 68, 90, 1);
 `;
 
 type SinglePlayerProps = {
@@ -30,13 +47,19 @@ export const SinglePlayer = ({ player }: SinglePlayerProps) => {
     setMode((prevMode) => (prevMode === "delete" ? "none" : "delete"));
   };
 
+  // const { data } = player.teamId
+  //   ? useGetSingleTeam(player.teamId)
+  //   : { data: null };
+
+  const { data } = useGetSingleTeam(player.teamId ?? "");
+
   return (
-    <li>
+    <StyledListElement>
       <div>
-        <p>
+        <b>
           {player.firstName} {player.lastName}
-        </p>
-        <p>Team: {player.teamId}</p>
+        </b>
+        <p>Team: {data ? data.name : ""}</p>
       </div>
       <div>
         <EditButton onClick={toggleEditMode}>
@@ -50,6 +73,6 @@ export const SinglePlayer = ({ player }: SinglePlayerProps) => {
           <DeletePlayer player={player} onCancel={toggleDeleteMode} />
         ) : undefined}
       </div>
-    </li>
+    </StyledListElement>
   );
 };
