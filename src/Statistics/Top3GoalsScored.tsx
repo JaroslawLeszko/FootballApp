@@ -1,5 +1,12 @@
+import styled from "styled-components";
 import { useGetTeamQuery } from "../queries/useGetTeamQuery";
 import { TeamEntity } from "../types";
+
+const Top3 = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+`;
 
 export const Top3GoalsScored = () => {
   const { data } = useGetTeamQuery();
@@ -14,15 +21,28 @@ export const Top3GoalsScored = () => {
     <>
       <div>
         <h2>Top 3 goals scored</h2>
-        <p>
-          1. {top3Sort[0].name} goals: {top3Sort[0].goalsScored}
-        </p>
-        <p>
-          2. {top3Sort[1].name} goals: {top3Sort[1].goalsScored}
-        </p>
-        <p>
-          3. {top3Sort[2].name} goals: {top3Sort[2].goalsScored}
-        </p>
+        <div>
+          <Top3>
+            <h3>1. {top3Sort[0].name}</h3>
+            <h3>{top3Sort[0].goalsScored} goals.</h3>
+          </Top3>
+          <Top3>
+            <p>
+              <strong>2. {top3Sort[1].name}</strong>
+            </p>
+            <p>
+              <strong>{top3Sort[1].goalsScored} goals.</strong>
+            </p>
+          </Top3>
+          <Top3>
+            <p>
+              <strong>3. {top3Sort[2].name}</strong>
+            </p>
+            <p>
+              <strong>{top3Sort[2].goalsScored} goals.</strong>
+            </p>
+          </Top3>
+        </div>
       </div>
     </>
   );
