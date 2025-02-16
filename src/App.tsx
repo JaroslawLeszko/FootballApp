@@ -14,9 +14,10 @@ const GlobalStyle = createGlobalStyle`
 
 const theme = {
   colors: {
-    primary: "#C1CFDA",
-    secondary: "#20A4F3",
-    delete: "#BC243B",
+    primary: "#C8D5E5",
+    secondary: "#81A4CD",
+    delete: "#F17300",
+    navigation: "#3e7cb1",
   },
 };
 

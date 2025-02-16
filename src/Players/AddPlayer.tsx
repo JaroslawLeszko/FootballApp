@@ -10,7 +10,9 @@ export const AddPlayer = () => {
     teamId: "",
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
     setValues((prevValues) => ({
       ...prevValues,

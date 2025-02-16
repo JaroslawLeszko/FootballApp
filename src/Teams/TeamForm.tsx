@@ -1,12 +1,37 @@
 import { ChangeEvent, FormEvent } from "react";
 import { TeamDto } from "../types";
 import styled from "styled-components";
+import { commonButton } from "../Helpers/commonButton";
 
-const StyledButton = styled.button`
+const InputWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${(props) => props.theme.colors.primary};
+  flex-direction: column;
+  width: 300px;
+  align-items: left;
+`;
+
+const Form = styled.form`
+  margin-top: 20px;
+  width: 100%;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  border-radius: 5px;
+  background-color: ${(props) => props.theme.colors.secondary};
+  box-sizing: border-box;
+`;
+
+const SaveButton = styled.button`
+  ${commonButton}
+  margin: 0;
+  margin-top: 5px;
+  width: 100%;
+  background-color: ${(props) => props.theme.colors.secondary};
+  &:hover {
+    background: linear-gradient(90deg, #a6bedb, #5c8abf);
+  }
+  box-sizing: border-box;
 `;
 
 type TeamFormProps = {
@@ -23,46 +48,52 @@ export const TeamForm = ({
   isPending,
 }: TeamFormProps) => {
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <InputWrapper>
+      <p>
+        <strong>ADD TEAM</strong>
+      </p>
+      <Form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Name</label>
+          <div>
+            <label htmlFor="name">Name</label>
+          </div>
+          <Input
+            type="text"
+            id="name"
+            name="name"
+            value={values.name}
+            onChange={handleChange}
+          />
         </div>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={values.name}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
         <div>
-          <label htmlFor="localization">Localization</label>
+          <div>
+            <label htmlFor="localization">Localization</label>
+          </div>
+          <Input
+            type="text"
+            id="localization"
+            name="localization"
+            value={values.localization}
+            onChange={handleChange}
+          />
         </div>
-        <input
-          type="text"
-          id="localization"
-          name="localization"
-          value={values.localization}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
         <div>
-          <label htmlFor="yearOfFoundation">Year of foundation</label>
+          <div>
+            <label htmlFor="yearOfFoundation">Year of foundation</label>
+          </div>
+          <Input
+            type="number"
+            id="yearOfFoundation"
+            name="yearOfFoundation"
+            min="0"
+            value={values.yearOfFoundation}
+            onChange={handleChange}
+          />
         </div>
-        <input
-          type="number"
-          id="yearOfFoundation"
-          name="yearOfFoundation"
-          value={values.yearOfFoundation}
-          onChange={handleChange}
-        />
-      </div>
-      <StyledButton type="submit" disabled={isPending}>
-        Save
-      </StyledButton>
-    </form>
+        <SaveButton type="submit" disabled={isPending}>
+          Save
+        </SaveButton>
+      </Form>
+    </InputWrapper>
   );
 };

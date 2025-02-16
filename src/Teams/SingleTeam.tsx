@@ -1,11 +1,46 @@
 import { useState } from "react";
 import { TeamEntity } from "../types";
 import { useGetTeamPlayersQuery } from "../queries/useGetTeamPlayersQuery";
-
 import { TeamPlayersList } from "./TeamPlayersList";
 import { SingleTeamPlayer } from "./SingleTeamPlayer";
 import { EditTeam } from "./EditTeam";
 import { DeleteTeam } from "./DeleteTeam";
+import styled from "styled-components";
+import { commonButton } from "../Helpers/commonButton";
+
+const TeamCard = styled.div`
+  background-color: #3e7cb1;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 11px 11px 20px -12px rgba(66, 68, 90, 1);
+`;
+
+const TeamInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Info = styled.p`
+  margin: 2px;
+`;
+
+const DeleteButton = styled.button`
+  ${commonButton}
+  background-color: ${(props) => props.theme.colors.delete};
+  &:hover {
+    background: linear-gradient(90deg, #f19b00, #f14b00);
+  }
+`;
+
+const ShowEditButton = styled.button`
+  ${commonButton}
+  background-color: ${(props) => props.theme.colors.secondary};
+  &:hover {
+    background: linear-gradient(90deg, #a6bedb, #5c8abf);
+  }
+`;
 
 type SingleTeamProps = {
   team: TeamEntity;
@@ -39,18 +74,24 @@ export const SingleTeam = ({ team }: SingleTeamProps) => {
 
   return (
     <>
-      <div>
-        <p>
-          {team.name} {team.localization} {team.yearOfFoundation}
-        </p>
-        <button onClick={handleShowPlayers}>Show players</button>
-        <button onClick={toggleEditMode}>
+      <TeamCard>
+        <TeamInfo>
+          <Info>
+            <strong>{team.name}</strong>
+          </Info>
+          <Info>City: {team.localization}</Info>
+          <Info>Year of fundation: {team.yearOfFoundation}</Info>
+        </TeamInfo>
+        <ShowEditButton onClick={handleShowPlayers}>
+          Show players
+        </ShowEditButton>
+        <ShowEditButton onClick={toggleEditMode}>
           {mode === "edit" ? "Cancel" : "Edit"}
-        </button>
+        </ShowEditButton>
         {mode === "edit" ? <EditTeam team={team} /> : undefined}
-        <button onClick={toggleDeleteMode}>
+        <DeleteButton onClick={toggleDeleteMode}>
           {mode === "delete" ? "Cancel" : "Delete"}
-        </button>
+        </DeleteButton>
         {mode === "delete" ? (
           <DeleteTeam team={team} onCancel={toggleDeleteMode} />
         ) : undefined}
@@ -71,7 +112,7 @@ export const SingleTeam = ({ team }: SingleTeamProps) => {
             />
           </div>
         )}
-      </div>
+      </TeamCard>
     </>
   );
 };

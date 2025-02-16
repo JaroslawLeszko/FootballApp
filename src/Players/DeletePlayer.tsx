@@ -1,5 +1,23 @@
+import styled from "styled-components";
 import { useDeletePlayerMutation } from "../queries/useDeletePlayerMutation";
 import { PlayerEntity } from "../types/index";
+import { commonButton } from "../Helpers/commonButton";
+
+const YesButton = styled.button`
+  ${commonButton}
+  background-color: ${(props) => props.theme.colors.delete};
+  &:hover {
+    background: linear-gradient(90deg, #f19b00, #f14b00);
+  }
+`;
+
+const NoButton = styled.button`
+  ${commonButton}
+  background-color: ${(props) => props.theme.colors.secondary};
+  &:hover {
+    background: linear-gradient(90deg, #a6bedb, #5c8abf);
+  }
+`;
 
 type DeletePlayerProps = {
   player: PlayerEntity;
@@ -22,10 +40,10 @@ export const DeletePlayer = ({ player, onCancel }: DeletePlayerProps) => {
   return (
     <div>
       <p>
-        Do you want to delete {player.firstName} {player.lastName}
+        Do you want to delete {player.firstName} {player.lastName}?
       </p>
-      <button onClick={handleDelete}>Yes</button>
-      <button onClick={onCancel}>No</button>
+      <YesButton onClick={handleDelete}>Yes</YesButton>
+      <NoButton onClick={onCancel}>No</NoButton>
     </div>
   );
 };

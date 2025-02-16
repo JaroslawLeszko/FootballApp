@@ -1,8 +1,22 @@
 import styled from "styled-components";
 import { ViewType } from "./types";
+import { commonButton } from "./Helpers/commonButton";
+
+const Navbar = styled.div`
+  display: grid-row;
+  justify-content: left;
+  background: ${(props) => props.theme.colors.navigation};
+`;
 
 const Bookmark = styled.button`
-  margin: 5px;
+  ${commonButton}
+  background-color: ${(props) => props.theme.colors.navigation};
+  color: ${(props) => props.theme.colors.secondary};
+  &:hover {
+    background: ${(props) => props.theme.colors.secondary};
+    color: black;
+  }
+  min-width: 100px;
 `;
 
 type NavProps = {
@@ -16,20 +30,20 @@ export const Nav = ({ onBookmarkSelect }: NavProps) => {
   };
   return (
     <>
-      <div>
+      <Navbar>
         <Bookmark onClick={handleChange} name="players" value="players">
-          Players
+          PLAYERS
         </Bookmark>
         <Bookmark onClick={handleChange} name="teams" value="teams">
-          Teams
+          TEAMS
         </Bookmark>
         <Bookmark onClick={handleChange} name="matches" value="matches">
-          Matches
+          MATCHES
         </Bookmark>
         <Bookmark onClick={handleChange} name="statistics" value="statistics">
-          Statistics
+          STATISTICS
         </Bookmark>
-      </div>
+      </Navbar>
     </>
   );
 };

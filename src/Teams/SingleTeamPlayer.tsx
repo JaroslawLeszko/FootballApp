@@ -1,6 +1,31 @@
 import { useState } from "react";
 import { useEditPlayerMutation } from "../queries/useEditPlayerMutation";
 import { PlayerEntity } from "../types";
+import styled from "styled-components";
+import { commonButton } from "../Helpers/commonButton";
+
+const StyledListElement = styled.li`
+  list-style: dot;
+  background-color: #3e7cb1;
+`;
+
+const Player = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2px;
+  padding: 2px;
+`;
+
+const RemoveButton = styled.button`
+  ${commonButton}
+  margin: 4px;
+  padding: 4px;
+  background-color: ${(props) => props.theme.colors.delete};
+  &:hover {
+    background: linear-gradient(90deg, #f19b00, #f14b00);
+  }
+`;
 
 type SingleTeamPlayerProps = {
   singlePlayer: PlayerEntity;
@@ -30,11 +55,11 @@ export const SingleTeamPlayer = ({
   if (isPending) return <p>Loading...</p>;
 
   return (
-    <li>
-      <div>
+    <StyledListElement>
+      <Player>
         {singlePlayer.firstName} {singlePlayer.lastName}
-        <button onClick={handleChange}>Remove</button>
-      </div>
-    </li>
+        <RemoveButton onClick={handleChange}>Remove</RemoveButton>
+      </Player>
+    </StyledListElement>
   );
 };

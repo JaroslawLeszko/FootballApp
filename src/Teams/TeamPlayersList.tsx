@@ -2,6 +2,14 @@ import { useEffect, useState } from "react";
 import { useEditPlayerMutation } from "../queries/useEditPlayerMutation";
 import { useGetSinglePlayerQuery } from "../queries/useGetSinglePlayerQuery";
 import { useGetPlayersQuery } from "../queries/useGetPlayersQuery";
+import styled from "styled-components";
+
+const Select = styled.select`
+  width: 100%;
+  border-radius: 5px;
+  background-color: ${(props) => props.theme.colors.secondary};
+  box-sizing: border-box;
+`;
 
 type TeamPlayersListProps = {
   newPlayerTeamId: string;
@@ -60,14 +68,14 @@ export const TeamPlayersList = ({
       <div>
         <label htmlFor="yearOfFoundation">Add player to team</label>
       </div>
-      <select name="" id="" onChange={handleAssignPlayer}>
+      <Select name="" id="" onChange={handleAssignPlayer}>
         <option value="">Select player</option>
         {freePlayers.map((player) => (
           <option value={player.id} key={player.id}>
             {player.firstName} {player.lastName}
           </option>
         ))}
-      </select>
+      </Select>
     </div>
   );
 };
