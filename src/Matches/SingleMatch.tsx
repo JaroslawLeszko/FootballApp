@@ -13,10 +13,13 @@ const MatchInfo = styled.div`
   flex-direction: column;
 `;
 
-const Info = styled.p`
+const Info = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+const InfoLine = styled.p`
   margin: 2px;
   padding: 2px;
 `;
@@ -49,19 +52,20 @@ export const SingleMatch = ({ match }: SingleMatchProps) => {
           <strong>{match.teamB[0]}</strong>
         </Info>
         <Info>
-          <Info>{match.teamAResult}</Info> : <Info>{match.teamBResult}</Info>
+          <InfoLine>{match.teamAResult}</InfoLine> :{" "}
+          <InfoLine>{match.teamBResult}</InfoLine>
         </Info>
         <Details>
           <Info>
-            <Info>Date: </Info>
+            <InfoLine>Date: </InfoLine>
             {match.date}
           </Info>
           <Info>
-            <Info>Place: </Info>
+            <InfoLine>Place: </InfoLine>
             {match.place}
           </Info>
           <Info>
-            <Info>Time of play: </Info>
+            <InfoLine>Time of play: </InfoLine>
             {match.timeOfPlay} minutes
           </Info>
         </Details>
